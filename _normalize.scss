@@ -1,0 +1,62 @@
+/* Полный сброс стилей */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+  margin: 0;
+  border: none;
+  background: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+q::before, q::after, blockquote::before, blockquote::after {
+  content: '';
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #000;
+  opacity: 0.1;
+}
+
+/* Убираем фокусную рамку для элементов, но оставляем её для клавиатуры */
+:focus:not(:focus-visible) {
+  outline: none;
+}

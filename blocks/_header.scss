@@ -1,0 +1,272 @@
+.header {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(85, 85, 85, 0.7); // Полупрозрачный цвет фона
+    z-index: 1000;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1em; // 16px
+        height: 3.75em; // 60px
+    }
+
+    // Лого
+    &__logo {
+        img {
+            max-height: 4em; // 40px
+            margin-left: 1.5em;
+        }
+    }
+
+    &__burger {
+        .burger-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            width: 2em; // ширина кнопки
+            height: 2em; // высота кнопки
+            margin-top: 0.6em;
+
+            .burger-line {
+                display: block;
+                width: 100%;
+                height: 0.25em; // высота полоски
+                background-color: white; // цвет полоски
+                transition: all 0.3s ease; // плавный переход
+                position: absolute; // позиционирование
+                left: 0;
+
+                &:nth-child(1) {
+                    top: 0; // первая полоска
+                }
+
+                &:nth-child(2) {
+                    top: 50%; // вторая полоска по центру
+                    transform: translateY(-50%); // центрируем
+                }
+
+                &:nth-child(3) {
+                    bottom: 0; // третья полоска
+                }
+            }
+
+            &.active {
+                .burger-line {
+                    &:nth-child(1) {
+                        transform: translateY(0.8em) rotate(46deg); // смещаем вниз и вращаем
+                    }
+
+                    &:nth-child(2) {
+                        opacity: 0; // скрываем вторую полоску
+                    }
+
+                    &:nth-child(3) {
+                        transform: translateY(-0.9em) rotate(-46deg); // смещаем вверх и вращаем
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+
+        // 48em
+        &__burger {
+            display: none; // Скрываем бургер на планшетах и десктопах
+        }
+
+        &__nav {
+            display: flex; // Отображаем меню на планшетах и десктопах
+        }
+    }
+
+    // Навигационное меню (по умолчанию скрыто)
+    &__nav {
+        display: none; // Скрыто на мобильных устройствах
+        color: white;
+
+        @media (min-width: 768px) {
+            // 48em
+            display: flex; // Отображаем меню на планшетах и десктопах
+            flex-grow: 1;
+            justify-content: center;
+            color: white;
+
+            ul {
+                display: flex;
+                gap: 1.25em; // 20px
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li a {
+                    text-decoration: none;
+                    color: #ffffff;
+                    font-weight: 600;
+                    font-size: 1.4em;
+                }
+            }
+        }
+    }
+
+    // Анимация для выезда меню
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        to {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+    }
+
+    // Меню в мобильной версии
+    &__nav.active {
+        display: flex; // Показываем меню при добавлении класса
+        flex-direction: column; // Вертикальное расположение на мобильных устройствах
+        position: absolute; // Позиционируем меню
+        top: 3.75em; // Под шапкой (60px)
+        justify-content: center;
+        align-items: center;
+        left: 0;
+        right: 0;
+        background-color: rgb(40, 40, 40); // Цвет фона контейнера
+        box-shadow: 0 0.125em 0.625em rgba(0, 0, 0, 0.1); // Тень
+        padding: 1em 0; // Отступы для списка
+        border-radius: 0 0 1em 1em; // Скругляем нижние углы
+        overflow: hidden; // Прячем содержимое, выходящее за пределы
+        animation: slideDown 0.5s ease forwards; // Применяем анимацию выезда
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            gap: 0.3em; // Увеличенный отступ между кнопками
+
+            li {
+                a {
+                    display: flex;
+                    align-items: center; // Центрируем содержимое по вертикали
+                    padding: 0.5em 2em; // Уменьшаем высоту кнопки
+                    background: #555;
+                    border-radius: 2em; // Овальная форма
+                    color: white;
+                    text-decoration: none;
+                    box-shadow: inset 0 0.2em 0.4em rgba(0, 0, 0, 0.5); // Вдавленный эффект на кнопках
+                    position: relative; // Устанавливаем относительное позиционирование для контейнера
+                    text-align: center; // Центрируем текст в кнопке
+                    font-size: 1.2em; // Увеличиваем размер шрифта
+                    letter-spacing: 0.1em; // Увеличиваем расстояние между буквами
+
+                    // Фиолетовый круг с вдавленным эффектом
+                    &::before {
+                        content: '';
+                        display: inline-block;
+                        width: 0.75em; // Размер круга
+                        height: 0.75em; // Размер круга
+                        position: absolute; // Абсолютное позиционирование
+                        left: 0.5em; // Позиция круга слева от текста
+                        top: 50%; // Вертикально по центру
+                        transform: translateY(-50%); // Центрируем по вертикали
+                        background-color: #8a2be2; // Фиолетовый цвет
+                        border-radius: 50%; // Делает круг
+                        box-shadow: inset 0.15em 0.15em 0.2em rgba(0, 0, 0, 0.4); // Вдавленный эффект на кружке
+                    }
+
+                    &:hover {
+                        background: #666;
+                    }
+                }
+            }
+        }
+    }
+
+    // Скрытие меню с анимацией
+    &__nav.inactive {
+        animation: slideUp 0.5s ease forwards; // Применяем анимацию скрытия
+    }
+
+
+
+    // Телефон (десктопная версия)
+    &__contact {
+        display: none;
+    
+        @media (min-width: 1024px) {
+            display: block;
+    
+            .header__phone {
+                font-weight: bold;
+                color: #ffffff;
+                text-decoration: none;
+                text-align: end; // Центрируем текст
+                display: inline-block; // Делаем блок внутри ссылки для центрирования
+    
+                // Добавим небольшие отступы, чтобы текст смотрелся аккуратно
+                span {
+                    display: block; // Переносим текст "Звоните!" на новую строку
+                    font-weight: bold; // Опционально, чтобы сделать текст "Звоните!" менее жирным
+                    font-size: 1em; // Опционально, для уменьшения размера
+                }
+            }
+        }
+    }
+    
+
+    @media (min-width: 768px) { // АНИМАЦИЯ ПОЛОСОК НА КНОПКИ В ШАПКУ
+
+        // Только для планшетов и выше
+        &__nav ul li a {
+            position: relative;
+            overflow: hidden; // Скрываем полоски за пределами кнопки
+            padding: 0.01em 0; // Добавляем отступы вокруг текста
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                height: 0.1em; // Тоньше полоска
+                background-color: #ffffff; // Цвет полоски
+                width: 0; // Изначально ширина полоски равна нулю
+                transition: width 0.3s ease; // Плавное увеличение ширины
+            }
+
+            &::before {
+                top: -0.2em; // Позиционируем чуть выше текста
+                left: 0; // Начинаем слева
+            }
+
+            &::after {
+                bottom: -0.2em; // Позиционируем чуть ниже текста
+                right: 0; // Начинаем справа
+            }
+
+            &:hover::before {
+                width: 100%; // При наведении полоска сверху растет слева направо
+            }
+
+            &:hover::after {
+                width: 100%; // При наведении полоска снизу растет справа налево
+            }
+        }
+    }
+
+}

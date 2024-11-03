@@ -1,0 +1,222 @@
+.video-background {
+    position: relative;
+    height: 100vh; // Высота секции на весь экран
+    width: 100vw; // Ширина секции на весь экран
+    
+    .background-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1; // Видео на заднем плане
+        transform: translate(-50%, -50%); // Центрирование видео
+        object-fit: cover;
+    }
+
+    .text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); // Центрирование текста
+        text-align: center; // Выравнивание по центру
+
+        .title {
+            font-size: 1.6em; // Меньший размер текста для мобильных
+            font-weight: bold;
+            color: white; // Цвет текста
+            margin: 0;
+            white-space: nowrap; // Запрет переноса текста
+            overflow: hidden; // Скрытие лишнего текста
+            text-overflow: ellipsis; // Многоточие, если текст не вмещается
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), // Легкое свечение
+                0 0 10px rgba(255, 255, 255, 0.7); // Более интенсивное свечение
+        }
+
+        .subtitle {
+            font-size: 2em; // Чуть больший размер текста для мобильных
+            font-weight: bold;
+            color: white; // Цвет текста
+            margin: 0;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), // Легкое свечение
+                0 0 10px rgba(255, 255, 255, 0.7); // Более интенсивное свечение
+        }
+    }
+    &::after {
+        content: "О клубе"; // Текст, который будет добавлен
+        position: absolute; // Абсолютное позиционирование
+        bottom: -1.3em; // Прилегание к нижней части секции
+        left: 0; // Начало с левой стороны
+        height: 2em; // Высота для более комфортного размещения текста
+        width: 100%; // На всю ширину экрана
+        background-color: #333; // Темно-серый фон
+        padding: 0 20px; // Внутренние отступы (сбоку)
+        border-radius: 0 0 1em 1em; // Закругленные нижние углы
+        text-align: center; // Центрирование текста
+        color: white; // Цвет текста
+        z-index: 1; // На переднем плане
+        font-size: 1.5em; // Размер шрифта заголовка
+        letter-spacing: 0.1em; // Межбуквенное расстояние
+        text-transform: uppercase; // Преобразование текста в верхний регистр
+        line-height: 2em; // Вертикальное центрирование текста внутри блока
+    
+        // Эффект вдавленности
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5), // Внутренняя тень для вдавленности
+                    0 2px 5px rgba(0, 0, 0, 0.5); // Внешняя тень для эффекта глубины
+        
+        text-shadow: 0 0 10px white; // Белое свечение текста
+    }
+    
+
+    // Медиа-запрос для ширины 328 пикселей и меньше
+    @media (max-width: 328px) {
+        .text-overlay {
+            .title {
+                font-size: 1em; // Уменьшение размера текста для малых экранов
+                white-space: normal; // Разрешение переноса текста
+            }
+
+            .subtitle {
+                font-size: 1.5em; // Уменьшение размера текста для малых экранов
+                white-space: normal; // Разрешение переноса текста
+            }
+        }
+    }
+
+    // Медиа-запросы для планшетов
+    @media (min-width: 678px) {
+        .text-overlay {
+            .title {
+                font-size: 2em; // Увеличение размера текста для планшетов
+            }
+
+            .subtitle {
+                font-size: 2.5em; // Увеличение размера текста для планшетов
+            }
+        }
+    }
+
+    // Медиа-запросы для ноутбуков
+    @media (min-width: 1024px) {
+        .text-overlay {
+            .title {
+                font-size: 3em; // Увеличение размера текста для ноутбуков
+            }
+
+            .subtitle {
+                font-size: 3.5em; // Увеличение размера текста для ноутбуков
+            }
+        }
+    }
+}
+
+.slider-slide {
+    height: 80vh;
+}
+
+.slider {
+    position: relative;
+    height: 80vh;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    top: -2em;
+}
+
+.slider-slides {
+    position: relative;
+    height: 100%;
+    transition: transform 0.3s cubic-bezier(0.51, 0.92, 0.24, 1);
+    will-change: transform;
+}
+
+.slider-slide {
+    float: left;
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: cover;
+    object-fit: cover;
+}
+
+.slider-dots {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+}
+
+.slider-dot,
+.slider-indicator {
+    display: block;
+    margin: 0 5px;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.slider-indicator {
+    position: absolute;
+    background: white;
+    width: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+}
+
+.slider-indicator-left {
+    transition: left 0.3s cubic-bezier(0.51, 0.92, 0.24, 1.15), right 0.3s 0.1s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+}
+
+.slider-indicator-right {
+    transition: left 0.3s 0.1s cubic-bezier(0.51, 0.92, 0.24, 1.15), right 0.3s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+}
+
+.slider-slide {
+    height: 80vh;
+    position: relative;
+
+    .slide-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: 50% 50%;
+        background-size: cover;
+        filter: grayscale(100%) blur(5px); // Фильтр применен только к фону
+        z-index: 1;
+    }
+
+    .slide-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1em 2em;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        font-size: 1.2em;
+        text-align: center;
+        border-radius: 8px;
+        user-select: none;
+        z-index: 2; // Текст поверх фона
+        height: 20em;
+        width: 15em;
+
+        // Медиа-запрос для планшетов
+        @media (min-width: 678px) {
+            width: 30em; // Увеличенная ширина для планшетов
+            height: 22em;
+        }
+
+        // Медиа-запрос для ноутбуков и ПК
+        @media (min-width: 1024px) {
+            width: 40em; // Увеличенная ширина для ноутбуков и ПК
+            height: 22em;
+        }
+    }
+   
+}
+

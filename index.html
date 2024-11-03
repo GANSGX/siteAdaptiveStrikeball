@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="styles.css">
+    <script src="/js/app.js" defer></script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <title>Полигон "Рубеж"</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header__container">
+            <!-- Логотип -->
+            <div class="header__logo">
+                <a href="#" aria-label="Logo">
+                    <img src="img/Rubej.png" alt="Логотип" />
+                </a>
+            </div>
+
+            <!-- Бургер-меню (мобильная версия) -->
+            <div class="header__burger">
+                <button aria-label="Открыть меню" class="burger-button">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+            </div>
+
+            <!-- Меню навигации (отображается с планшета) -->
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#gallery">Галерея</a></li>
+                    <li><a href="#about">О клубе</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <!-- Номер телефона (добавляется в десктопной версии) -->
+            <div class="header__contact">
+                <a href="tel:+79039320333" class="header__phone">+7 (903) 932-03-33 <span>Звоните!</span></a>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <section class="video-background">
+            <video autoplay loop muted class="background-video">
+                <source src="img/gifimg.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="text-overlay">
+                <h1 class="title">военно-тактический полигон</h1>
+                <h2 class="subtitle">РУБЕЖ</h2>
+            </div>
+        </section>
+
+        
+
+        <section class="slider-section">
+            <div class="slider">
+                <div class="slider-slides">
+                    <div class="slider-slide">
+                        <div class="slide-image" style="background-image: url(/img/img2.jpg);"></div>
+                        <div class="slide-text">Текст для первого слайда</div>
+                    </div>
+                    <div class="slider-slide">
+                        <div class="slide-image" style="background-image: url(/img/img3.jpg);"></div>
+                        <div class="slide-text">Текст для второго слайда</div>
+                    </div>
+                    <div class="slider-slide">
+                        <div class="slide-image" style="background-image: url(/img/img4.jpg);"></div>
+                        <div class="slide-text">Текст для третьего слайда</div>
+                    </div>
+                    <div class="slider-slide">
+                        <div class="slide-image" style="background-image: url(/img/img5.jpg);"></div>
+                        <div class="slide-text">Текст для четвертого слайда</div>
+                    </div>
+                </div>
+                <div class="slider-dots"></div>
+            </div>
+        </section>
+        
+        
+
+    </main>
+
+
+</body>
+
+</html>
