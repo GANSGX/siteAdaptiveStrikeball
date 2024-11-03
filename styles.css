@@ -538,7 +538,7 @@ body {
   /* Темно-серый фон */
   color: #f5f5f5;
   /* Белый цвет текста */
-  max-width: 80%;
+  max-width: 100%;
   /* Максимальная ширина модального окна */
   text-align: center;
   border-radius: 8px;
@@ -546,6 +546,13 @@ body {
   width: 20em;
   height: 30em;
   margin-top: 3em;
+}
+@media (max-width: 300px) {
+  .modal-content {
+    width: 16em;
+    height: 31em;
+    padding-top: 4em;
+  }
 }
 @media (min-width: 678px) {
   .modal-content {

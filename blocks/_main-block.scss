@@ -285,7 +285,7 @@
     /* Темно-серый фон */
     color: #f5f5f5;
     /* Белый цвет текста */
-    max-width: 80%;
+    max-width: 100%;
     /* Максимальная ширина модального окна */
     text-align: center;
     border-radius: 8px;
@@ -293,6 +293,13 @@
     width: 20em;
     height: 30em;
     margin-top: 3em;
+
+    // Медиа-запрос для экранов 300px и меньше
+    @media (max-width: 300px) {
+        width: 16em; // Ширина чуть больше
+        height: 31em;
+        padding-top: 4em;
+    }
 
     // Медиа-запрос для планшетов
     @media (min-width: 678px) {
