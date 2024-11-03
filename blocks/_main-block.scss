@@ -278,6 +278,20 @@
     width: 20em;
     height: 30em;
     margin-top: 3em;
+
+    // Медиа-запрос для планшетов
+    @media (min-width: 678px) {
+        width: 100%; // Увеличенная ширина для планшетов
+        height: 15em;
+        padding-top: 3em;
+    }
+
+    // Медиа-запрос для ноутбуков и ПК
+    @media (min-width: 1024px) {
+        width: 100%; // Увеличенная ширина для ноутбуков и ПК
+        height: 15em;
+        padding-top: 3em;
+    }
 }
 
 
@@ -312,3 +326,4 @@
 .close-button:hover {
     transform: scale(1.1); /* Небольшое увеличение при наведении */
 }
+
