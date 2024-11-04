@@ -186,7 +186,7 @@
         height: 100%;
         background-position: 50% 50%;
         background-size: cover;
-        filter: grayscale(100%) blur(5px); // Фильтр применен только к фону
+        filter: grayscale(100%) blur(5px);
         z-index: 1;
     }
 
@@ -200,26 +200,61 @@
         color: white;
         font-size: 1.2em;
         text-align: center;
-        border-radius: 8px;
+        border-radius: 1em;
         user-select: none;
-        z-index: 2; // Текст поверх фона
+        z-index: 2;
         height: 20em;
         width: 15em;
+        backdrop-filter: blur(10px); // Эффект матового стекла
+        -webkit-backdrop-filter: blur(10px); // Для поддержки в Safari
 
-        // Медиа-запрос для планшетов
+
         @media (min-width: 678px) {
-            width: 30em; // Увеличенная ширина для планшетов
+            width: 30em;
             height: 22em;
         }
 
-        // Медиа-запрос для ноутбуков и ПК
         @media (min-width: 1024px) {
-            width: 40em; // Увеличенная ширина для ноутбуков и ПК
+            width: 40em;
             height: 22em;
         }
     }
 
+    .text-about-club {
+        font-size: 0.7em;
+
+        @media (min-width: 678px) {
+           font-size: 1em; 
+        }
+
+    }
+
+    .text-image {
+        width: 100%;
+        height: 64%;
+        object-fit: cover;
+        margin-top: 0.5em;
+        border-radius: 1em;
+        user-select: none; // Предотвращает выделение
+        pointer-events: none; // Предотвращает взаимодействие с изображением
+        transition: transform 0.3s ease; // Анимация для увеличения
+
+        &:hover {
+            transform: scale(1.05); // Увеличение изображения при наведении
+        }
+        
+        @media (min-width: 678px) {
+            width: 100%;
+            height: 75%;
+        }
+
+        @media (min-width: 1024px) {
+            width: 100%;
+            height: 75%;
+        }
+    }
 }
+
 
 
 
@@ -291,8 +326,8 @@
     border-radius: 8px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
     width: 20em;
-    height: 30em;
-    margin-top: 3em;
+    height: 26em;
+    padding-top: 4em;
 
     // Медиа-запрос для экранов 300px и меньше
     @media (max-width: 300px) {
@@ -303,14 +338,14 @@
 
     // Медиа-запрос для планшетов
     @media (min-width: 678px) {
-        width: 100%; // Увеличенная ширина для планшетов
+        width: 70%; // Увеличенная ширина для планшетов
         height: 15em;
         padding-top: 3em;
     }
 
     // Медиа-запрос для ноутбуков и ПК
     @media (min-width: 1024px) {
-        width: 100%; // Увеличенная ширина для ноутбуков и ПК
+        width: 70%; // Увеличенная ширина для ноутбуков и ПК
         height: 15em;
         padding-top: 3em;
     }
@@ -332,9 +367,6 @@
 .modal-link {
     color: #ffffff;
     /* Ссылки серого цвета */
-    text-shadow:
-        1px 1px 2px rgba(255, 255, 255, 0.452),
-        0 0 5px rgba(224, 104, 104, 0.846);
     text-decoration: none;
 }
 
@@ -352,7 +384,44 @@
     transform: scale(1.1);
     /* Небольшое увеличение при наведении */
 }
+.modal-link {
+    color: inherit;
+    font-size: 1.5em;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    margin-left: 0.2em;
 
+    &:hover, &:active {
+        transform: scale(1.4);
+    }
+}
+
+.modal-phone {
+    font-size: 1em;
+}
+.whatsapp-icon {
+    color: #25D366;
+
+    &:hover, &:active {
+        color: #1EBE54;
+    }
+}
+
+.telegram-icon {
+    color: #0088CC;
+
+    &:hover, &:active {
+        color: #007AB8;
+    }
+}
+
+.vk-icon {
+    color: #4680C2;
+
+    &:hover, &:active {
+        color: #3B70A4;
+    }
+}
 
 
 
@@ -360,101 +429,101 @@
     padding: 1em;
     background-color: #333;
     text-align: center;
-  
+
     &__title {
-      font-size: 1.8em;
-      font-weight: bold;
-      margin-bottom: 0.5em;
-      color: #ffffff;
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-      background: linear-gradient(145deg, #2e2e2e, #383838); // Создает градиентный эффект
-      box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.6),
-                  inset -4px -4px 8px rgba(255, 255, 255, 0.1); // Эффект вдавленности
-      padding: 0.5em;
-      border-radius: 8px; // Округляем углы
+        font-size: 1.8em;
+        font-weight: bold;
+        margin-bottom: 0.5em;
+        color: #ffffff;
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+        background: linear-gradient(145deg, #2e2e2e, #383838); // Создает градиентный эффект
+        box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.6),
+            inset -4px -4px 8px rgba(255, 255, 255, 0.1); // Эффект вдавленности
+        padding: 0.5em;
+        border-radius: 8px; // Округляем углы
     }
-  
+
     &__info {
-      margin-bottom: 1em;
+        margin-bottom: 1em;
     }
-  
+
     &__phone {
-      font-size: 1.2em;
-      font-weight: bold;
-      margin-bottom: 0.5em;
-      color: #ffffff;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 0.5em;
+        color: #ffffff;
     }
-  
+
     &__subtitle {
-      font-size: 1.3em;
-      font-weight: bold;
-      margin-top: 1em;
-      margin-bottom: 0.5em;
-      color: #ffffff;
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+        font-size: 1.3em;
+        font-weight: bold;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+        color: #ffffff;
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
     }
-  
+
     &__socials {
-      display: flex;
-      justify-content: center;
-      gap: 0.5em;
-  
-      .social-link {
-        font-size: 2.1em;
-        transition: transform 0.3s;
-  
-        &:hover {
-          transform: scale(1.1);
+        display: flex;
+        justify-content: center;
+        gap: 0.5em;
+
+        .social-link {
+            font-size: 2.1em;
+            transition: transform 0.3s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            &.vk {
+                color: #4c75a3;
+            }
+
+            &.telegram {
+                color: #0088cc;
+            }
+
+            &.whatsapp {
+                color: #25d366;
+            }
         }
-  
-        &.vk {
-          color: #4c75a3;
-        }
-  
-        &.telegram {
-          color: #0088cc;
-        }
-  
-        &.whatsapp {
-          color: #25d366;
-        }
-      }
     }
-  
+
     &__address {
-      font-size: 1em;
-      color: #ffffff;
-      margin-bottom: 1em;
+        font-size: 1em;
+        color: #ffffff;
+        margin-bottom: 1em;
     }
-  
+
     &__map {
-      height: 200px;
-      background-color: #ddd;
+        height: 200px;
+        background-color: #ddd;
     }
-  }
-  
-  .map-container {
+}
+
+.map-container {
     position: relative;
     overflow: hidden;
     width: 100%;
     max-width: 100%;
     height: auto;
-  
+
     iframe {
-      width: 100%;
-      height: 400px; // Фиксированная высота для iframe
-      border: 0;
+        width: 100%;
+        height: 400px; // Фиксированная высота для iframe
+        border: 0;
     }
-  
+
     a {
-      color: #eee;
-      font-size: 12px;
-      position: absolute;
-      top: 0;
+        color: #eee;
+        font-size: 12px;
+        position: absolute;
+        top: 0;
     }
-  
+
     a:nth-child(2) {
-      top: 14px;
+        top: 14px;
     }
-  }
-  
+}
+

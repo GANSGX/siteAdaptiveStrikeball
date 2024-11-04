@@ -461,11 +461,13 @@ body {
   color: white;
   font-size: 1.2em;
   text-align: center;
-  border-radius: 8px;
+  border-radius: 1em;
   user-select: none;
   z-index: 2;
   height: 20em;
   width: 15em;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 @media (min-width: 678px) {
   .slider-slide .slide-text {
@@ -477,6 +479,39 @@ body {
   .slider-slide .slide-text {
     width: 40em;
     height: 22em;
+  }
+}
+.slider-slide .text-about-club {
+  font-size: 0.7em;
+}
+@media (min-width: 678px) {
+  .slider-slide .text-about-club {
+    font-size: 1em;
+  }
+}
+.slider-slide .text-image {
+  width: 100%;
+  height: 64%;
+  object-fit: cover;
+  margin-top: 0.5em;
+  border-radius: 1em;
+  user-select: none;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+.slider-slide .text-image:hover {
+  transform: scale(1.05);
+}
+@media (min-width: 678px) {
+  .slider-slide .text-image {
+    width: 100%;
+    height: 75%;
+  }
+}
+@media (min-width: 1024px) {
+  .slider-slide .text-image {
+    width: 100%;
+    height: 75%;
   }
 }
 
@@ -544,8 +579,8 @@ body {
   border-radius: 8px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
   width: 20em;
-  height: 30em;
-  margin-top: 3em;
+  height: 26em;
+  padding-top: 4em;
 }
 @media (max-width: 300px) {
   .modal-content {
@@ -556,14 +591,14 @@ body {
 }
 @media (min-width: 678px) {
   .modal-content {
-    width: 100%;
+    width: 70%;
     height: 15em;
     padding-top: 3em;
   }
 }
 @media (min-width: 1024px) {
   .modal-content {
-    width: 100%;
+    width: 70%;
     height: 15em;
     padding-top: 3em;
   }
@@ -584,7 +619,6 @@ body {
 .modal-link {
   color: #ffffff;
   /* Ссылки серого цвета */
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.452), 0 0 5px rgba(224, 104, 104, 0.846);
   text-decoration: none;
 }
 
@@ -601,6 +635,42 @@ body {
 .close-button:hover {
   transform: scale(1.1);
   /* Небольшое увеличение при наведении */
+}
+
+.modal-link {
+  color: inherit;
+  font-size: 1.5em;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  margin-left: 0.2em;
+}
+.modal-link:hover, .modal-link:active {
+  transform: scale(1.4);
+}
+
+.modal-phone {
+  font-size: 1em;
+}
+
+.whatsapp-icon {
+  color: #25D366;
+}
+.whatsapp-icon:hover, .whatsapp-icon:active {
+  color: #1EBE54;
+}
+
+.telegram-icon {
+  color: #0088CC;
+}
+.telegram-icon:hover, .telegram-icon:active {
+  color: #007AB8;
+}
+
+.vk-icon {
+  color: #4680C2;
+}
+.vk-icon:hover, .vk-icon:active {
+  color: #3B70A4;
 }
 
 .contacts {
