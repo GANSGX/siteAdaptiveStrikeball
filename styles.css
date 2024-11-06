@@ -993,7 +993,8 @@ body {
 
 .modal__contacts {
   margin-top: 20px;
-  text-align: center; /* Центрируем текст */
+  text-align: center;
+  /* Центрируем текст */
 }
 
 .modal__contacts p {
@@ -1020,21 +1021,69 @@ body {
 }
 
 .social-icon:hover {
-  transform: scale(1.1); /* Увеличение при наведении */
-  opacity: 0.8; /* Немного уменьшить прозрачность */
+  transform: scale(1.1);
+  /* Увеличение при наведении */
+  opacity: 0.8;
+  /* Немного уменьшить прозрачность */
 }
 
 /* Убираем стили для цвета, чтобы иконки оставались в своих стандартных цветах */
 .social-icon.vk i {
-  color: #4c75a3; /* Цвет ВКонтакте */
+  color: #4c75a3;
+  /* Цвет ВКонтакте */
 }
 
 .social-icon.tg i {
-  color: #0088cc; /* Цвет Telegram */
+  color: #0088cc;
+  /* Цвет Telegram */
 }
 
 .social-icon.wa i {
-  color: #25d366; /* Цвет WhatsApp */
+  color: #25d366;
+  /* Цвет WhatsApp */
+}
+
+.calendar-container {
+  text-align: center;
+  padding: 1em;
+  height: auto;
+  width: auto;
+}
+.calendar-container h2 {
+  margin-bottom: 1em;
+  font-size: 2em;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  background: linear-gradient(145deg, #2e2e2e, #383838);
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.6), inset -4px -4px 8px rgba(255, 255, 255, 0.1);
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calendar-container .calendar-frame {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.calendar-container .calendar-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #eee;
+  transform-origin: top left;
+}
+@media (min-width: 678px) {
+  .calendar-container .calendar-frame {
+    max-width: 100%;
+    height: 450px;
+  }
+}
+@media (min-width: 300px) and (max-width: 677px) {
+  .calendar-container .calendar-frame {
+    height: 30em;
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
