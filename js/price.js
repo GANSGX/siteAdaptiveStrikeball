@@ -78,15 +78,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Открываем модальное окно
-function openModal(title, description) {
-    const modal = document.getElementById("service-modal");
-    const modalTitle = modal.querySelector(".modal__title");
-    const modalDescription = modal.querySelector(".modal__description");
+    function openModal(title, description) {
+        const modal = document.getElementById("service-modal");
+        const modalTitle = modal.querySelector(".modal__title");
+        const modalDescription = modal.querySelector(".modal__description");
 
-    modalTitle.textContent = title;
-    modalDescription.innerHTML = description;  // Используем innerHTML для обработки тега <br>
-    modal.style.display = "flex";
-}
+        modalTitle.textContent = title;
+        modalDescription.innerHTML = description;  // Используем innerHTML для обработки тега <br>
+        modal.style.display = "flex";
+    }
 
     // Закрываем модальное окно
     function closeModal() {
@@ -121,14 +121,14 @@ function openModal(title, description) {
         }
     });
 
-    // Отображаем карточки для страйкбола по умолчанию
-    renderCards("strikeball");
+    // Устанавливаем начальное отображение
+    renderCards('strikeball');
 
+    // Обработчики переключения категорий
     buttons.forEach(button => {
         button.addEventListener("click", () => {
-            buttons.forEach(btn => btn.classList.remove("active"));
-            button.classList.add("active");
-            renderCards(button.getAttribute("data-category"));
+            const category = button.getAttribute("data-category");
+            renderCards(category);
         });
     });
 });
