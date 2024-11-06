@@ -950,4 +950,89 @@ body {
   width: 9em;
 }
 
+/* Стиль для модального окна */
+/* Основные стили для модального окна */
+.modal {
+  display: none;
+  /* Скрываем модальное окно по умолчанию */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Полупрозрачный фон */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal__content {
+  background-color: #444;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 80%;
+  text-align: center;
+  position: relative;
+}
+
+.modal__close {
+  position: absolute;
+  top: -0.1em;
+  right: 10px;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.modal__service-details {
+  margin-bottom: 20px;
+}
+
+.modal__contacts {
+  margin-top: 20px;
+  text-align: center; /* Центрируем текст */
+}
+
+.modal__contacts p {
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.modal__phone {
+  margin-top: 10px;
+}
+
+/* Основные стили для иконок */
+.modal__socials {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.social-icon {
+  font-size: 2em;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1); /* Увеличение при наведении */
+  opacity: 0.8; /* Немного уменьшить прозрачность */
+}
+
+/* Убираем стили для цвета, чтобы иконки оставались в своих стандартных цветах */
+.social-icon.vk i {
+  color: #4c75a3; /* Цвет ВКонтакте */
+}
+
+.social-icon.tg i {
+  color: #0088cc; /* Цвет Telegram */
+}
+
+.social-icon.wa i {
+  color: #25d366; /* Цвет WhatsApp */
+}
+
 /*# sourceMappingURL=styles.css.map */
