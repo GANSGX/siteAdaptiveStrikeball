@@ -710,7 +710,7 @@
         align-items: center; // Центрирует содержимое по горизонтали
         justify-content: flex-start;
         height: 21em; // Фиксированная высота для одинакового размера карточек
-        transition: transform 0.3s ease, box-shadow 0.3s ease; // Плавный переход для масштабирования и тени
+        transition: transform 0.1s ease, box-shadow 0.1s ease; // Плавный переход для масштабирования и тени
         will-change: transform, box-shadow;
 
         &:hover,

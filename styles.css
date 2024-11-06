@@ -78,6 +78,7 @@ body {
   font-weight: bold;
   color: white;
   background-color: #333;
+  scroll-behavior: smooth;
 }
 
 .header {
@@ -155,7 +156,7 @@ body {
   }
   .header__nav ul {
     display: flex;
-    gap: 1.25em;
+    gap: 1.5em;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -165,6 +166,7 @@ body {
     color: #ffffff;
     font-weight: 600;
     font-size: 1.4em;
+    letter-spacing: 0.15em;
   }
 }
 @keyframes slideDown {
@@ -272,13 +274,13 @@ body {
   .header__nav ul li a::before, .header__nav ul li a::after {
     content: "";
     position: absolute;
-    height: 0.1em;
+    height: 0.08em;
     background-color: #ffffff;
     width: 0;
     transition: width 0.3s ease;
   }
   .header__nav ul li a::before {
-    top: -0.2em;
+    top: -0.1em;
     left: 0;
   }
   .header__nav ul li a::after {
@@ -916,7 +918,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   height: 21em;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
   will-change: transform, box-shadow;
 }
 .services__card:hover, .services__card:active {

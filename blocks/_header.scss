@@ -97,7 +97,7 @@
 
             ul {
                 display: flex;
-                gap: 1.25em; // 20px
+                gap: 1.5em; // 20px
                 list-style: none;
                 padding: 0;
                 margin: 0;
@@ -107,6 +107,7 @@
                     color: #ffffff;
                     font-weight: 600;
                     font-size: 1.4em;
+                    letter-spacing: 0.15em;
                 }
             }
         }
@@ -243,14 +244,14 @@
             &::after {
                 content: '';
                 position: absolute;
-                height: 0.1em; // Тоньше полоска
+                height: 0.08em; // Тоньше полоска
                 background-color: #ffffff; // Цвет полоски
                 width: 0; // Изначально ширина полоски равна нулю
                 transition: width 0.3s ease; // Плавное увеличение ширины
             }
 
             &::before {
-                top: -0.2em; // Позиционируем чуть выше текста
+                top: -0.1em; // Позиционируем чуть выше текста
                 left: 0; // Начинаем слева
             }
 
