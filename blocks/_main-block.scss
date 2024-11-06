@@ -224,7 +224,7 @@
         font-size: 0.7em;
 
         @media (min-width: 678px) {
-           font-size: 1em; 
+            font-size: 1em;
         }
 
     }
@@ -242,7 +242,7 @@
         &:hover {
             transform: scale(1.05); // Увеличение изображения при наведении
         }
-        
+
         @media (min-width: 678px) {
             width: 100%;
             height: 75%;
@@ -384,6 +384,7 @@
     transform: scale(1.1);
     /* Небольшое увеличение при наведении */
 }
+
 .modal-link {
     color: inherit;
     font-size: 1.5em;
@@ -391,7 +392,8 @@
     text-decoration: none;
     margin-left: 0.2em;
 
-    &:hover, &:active {
+    &:hover,
+    &:active {
         transform: scale(1.4);
     }
 }
@@ -399,10 +401,12 @@
 .modal-phone {
     font-size: 1em;
 }
+
 .whatsapp-icon {
     color: #25D366;
 
-    &:hover, &:active {
+    &:hover,
+    &:active {
         color: #1EBE54;
     }
 }
@@ -410,7 +414,8 @@
 .telegram-icon {
     color: #0088CC;
 
-    &:hover, &:active {
+    &:hover,
+    &:active {
         color: #007AB8;
     }
 }
@@ -418,7 +423,8 @@
 .vk-icon {
     color: #4680C2;
 
-    &:hover, &:active {
+    &:hover,
+    &:active {
         color: #3B70A4;
     }
 }
@@ -538,76 +544,209 @@
 
 
 .gallery-slider {
-	position: relative;
-	width: 100vw;  /* Полная ширина экрана */
-	height: 100vh; /* Полная высота экрана */
-	margin: 0;     /* Убираем внешние отступы */
-	box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2); 
-	overflow: hidden;
+    position: relative;
+    width: 100vw;
+    /* Полная ширина экрана */
+    height: 100vh;
+    /* Полная высота экрана */
+    margin: 0;
+    /* Убираем внешние отступы */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
+
 .gallery-slider-slides {
-	position: relative;
-	width: 100%;  /* Полная ширина родителя */
-	height: 100%; /* Полная высота родителя */
-	transition: transform 0.3s cubic-bezier(0.51, 0.92, 0.24, 1);
-	will-change: transform;
+    position: relative;
+    width: 100%;
+    /* Полная ширина родителя */
+    height: 100%;
+    /* Полная высота родителя */
+    transition: transform 0.3s cubic-bezier(0.51, 0.92, 0.24, 1);
+    will-change: transform;
 }
+
 .gallery-slider-slide {
-	float: left;
-	width: 100%;  /* Каждое изображение занимает полную ширину */
-	height: 100%; /* Каждое изображение занимает полную высоту */
-	background-position: 50% 50%;
-	background-size: cover;
-    margin-top: 5em;	
+    float: left;
+    width: 100%;
+    /* Каждое изображение занимает полную ширину */
+    height: 100%;
+    /* Каждое изображение занимает полную высоту */
+    background-position: 50% 50%;
+    background-size: cover;
+    margin-top: 5em;
 }
+
 .gallery-slider-dots {
-	display: flex;
-	position: absolute;
-	bottom: 20px;
-	left: 20px;
-	width: calc(100% - 40px);
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
 }
-.gallery-slider-dot, 
+
+.gallery-slider-dot,
 .gallery-slider-indicator {
-	display: block;
-	margin: 0 5px;
-	height: 14px;
-	background: rgba(255, 255, 255, 0.5);
-	border-radius: 50px;
-	cursor: pointer;
+    display: block;
+    margin: 0 5px;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    cursor: pointer;
 }
+
 .gallery-slider-indicator {
-	position: absolute;
-	background: white;
-	width: auto;
-	box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2);   
+    position: absolute;
+    background: white;
+    width: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
 }
+
 .gallery-slider-indicator-left {
-	transition: left 0.3s cubic-bezier(0.51, 0.92, 0.24, 1.15), right 0.3s 0.1s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+    transition: left 0.3s cubic-bezier(0.51, 0.92, 0.24, 1.15), right 0.3s 0.1s cubic-bezier(0.51, 0.92, 0.24, 1.15);
 }
+
 .gallery-slider-indicator-right {
-	transition: left 0.3s 0.1s cubic-bezier(0.51, 0.92, 0.24, 1.15), right 0.3s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+    transition: left 0.3s 0.1s cubic-bezier(0.51, 0.92, 0.24, 1.15), right 0.3s cubic-bezier(0.51, 0.92, 0.24, 1.15);
 }
 
 .text-decoration {
     position: absolute;
-    background-color: #333; /* Темно-серый фон */
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.7), /* Основное внутреннее затенение */
-                inset 0 0 15px rgba(0, 0, 0, 0.7); /* Более мягкое внутреннее затенение */
-    border-radius: 0 0 1em 1em; /* Закругленные нижние углы */
-    height: 7em; /* Высота 7em */
-    width: 100%; /* Ширина 100% */
-    z-index: 1; /* z-index 1 */
-    
-    display: flex; /* Используем Flexbox для центрирования */
-    justify-content: center; /* Центрируем по горизонтали */
-    align-items: flex-end; /* Выравниваем по вертикали к нижней части */
-    padding-bottom: 0.4em; /* Отступ снизу для текста */
-    color: white; /* Цвет текста белый */
-    text-shadow: 0 0 10px white; /* Белое свечение текста */
+    background-color: #333;
+    /* Темно-серый фон */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.7),
+        /* Основное внутреннее затенение */
+        inset 0 0 15px rgba(0, 0, 0, 0.7);
+    /* Более мягкое внутреннее затенение */
+    border-radius: 0 0 1em 1em;
+    /* Закругленные нижние углы */
+    height: 7em;
+    /* Высота 7em */
+    width: 100%;
+    /* Ширина 100% */
+    z-index: 1;
+    /* z-index 1 */
+
+    display: flex;
+    /* Используем Flexbox для центрирования */
+    justify-content: center;
+    /* Центрируем по горизонтали */
+    align-items: flex-end;
+    /* Выравниваем по вертикали к нижней части */
+    padding-bottom: 0.4em;
+    /* Отступ снизу для текста */
+    color: white;
+    /* Цвет текста белый */
+    text-shadow: 0 0 10px white;
+    /* Белое свечение текста */
 
     p {
         font-size: 1.5em;
     }
 }
 
+
+
+
+
+
+.services {
+    background-color: #2d2d2d;
+    padding: 2em;
+    text-align: center;
+
+    h2 {
+        background-color: #333;
+        color: #fff;
+        padding: 0.5em;
+        font-size: 2em;
+        width: 100%; // Ширина заголовка 90%
+        margin: 1em auto 0; // Отступ сверху 1em и центрирование
+        height: 2em;
+        border-radius: 0.5em; // Закругленные углы
+        box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.6); // Чуть меньшая и менее интенсивная тень
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        text-shadow: 0 0 1px #fff, 0 0 2px #fff; // Уменьшенное свечение текста
+    }
+    
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+        margin-bottom: 1em;
+        margin-top: 0.5em;
+
+        .services__button {
+            padding: 0.5em 1em;
+            border: none;
+            background-color: #555;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+
+            &.active {
+                background-color: #888;
+            }
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1em;
+    }
+
+    &__card {
+        background-color: #333;
+        color: #fff;
+        padding: 1em;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center; // Центрирует содержимое по горизонтали
+        justify-content: flex-start;
+        height: 21em; // Фиксированная высота для одинакового размера карточек
+        transition: transform 0.3s ease, box-shadow 0.3s ease; // Плавный переход для масштабирования и тени
+        will-change: transform, box-shadow;
+
+        &:hover,
+        &:active {
+            transform: scale(1.05); // Увеличение на 5%
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); // Добавление тени
+        }
+
+        img {
+            width: 100%;
+            height: 150px; // Ограничение высоты для изображения
+            object-fit: cover; // Сохранение пропорций изображения
+            border-radius: 5px;
+        }
+
+        .services__title {
+            font-weight: bold;
+            margin: 0.5em 0;
+            font-size: 1em;
+        }
+
+        .services__price {
+            font-size: 1.2em;
+            color: #bbb; // Подберите цвет, если хотите выделить цену
+        }
+
+        .services__details-btn {
+            display: block;
+            padding: 0.5em;
+            background-color: #888;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: auto; // Подтягивает кнопку вниз карточки
+            width: 9em;
+        }
+    }
+}

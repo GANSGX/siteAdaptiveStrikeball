@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/price.js" defer></script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Полигон "Рубеж"</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header__container">
+            <!-- Логотип -->
+            <div class="header__logo">
+                <a href="index.html" aria-label="Logo">
+                    <img src="img/Rubej.png" alt="Логотип" />
+                </a>
+            </div>
+
+            <!-- Бургер-меню (мобильная версия) -->
+            <div class="header__burger">
+                <button aria-label="Открыть меню" class="burger-button">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+            </div>
+
+            <!-- Меню навигации (отображается с планшета) -->
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="price.html">Играть</a></li>
+                    <li><a href="gallery.html">Галерея</a></li>
+                    <li><a href="#about">О клубе</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <!-- Номер телефона (добавляется в десктопной версии) -->
+            <div class="header__contact">
+                <a href="tel:+79039320333" class="header__phone">+7 (903) 932-03-33 <span>Звоните!</span></a>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="services">
+            <h2>Наши услуги</h2>
+            <div class="services__buttons">
+                <button class="services__button active" data-category="strikeball">Страйкбол</button>
+                <button class="services__button" data-category="hydroball">Гидробол</button>
+            </div>
+            <div class="services__grid">
+                <!-- Карточки услуг будут добавляться динамически через JS -->
+            </div>
+        </section>
+
+    </main>
+
+
+</body>
+
+</html>
