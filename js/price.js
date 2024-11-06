@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Закрытие модального окна при клике вне его
     window.addEventListener("click", (e) => {
         const modal = document.getElementById("service-modal");
+        // Проверка, был ли клик именно по фону модального окна, а не по его содержимому
         if (e.target === modal) {
             closeModal();
         }
