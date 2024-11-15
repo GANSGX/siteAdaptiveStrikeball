@@ -110,7 +110,7 @@
         <section class="unique-order-section">
             <a href="" class="unique-order-button" id="open-modal-button">Заказать игру сейчас</a>
         </section>
-        <div id="modal" class="modal">
+        <!-- <div id="modal" class="modal">
             <div class="modal-content">
                 <span class="close-button">&times;</span>
                 <h2 id="modal-title" class="modal-header">Для заказа игры звоните и пишите в наши соц.сети!</h2>
@@ -130,7 +130,30 @@
                     </a>
                 </p>
             </div>
+        </div> -->
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2 id="modal-title" class="modal-header">Оформите заказ</h2>
+                <form id="orderForm">
+                    <label for="name">ФИО:</label>
+                    <input type="text" id="name" class="modal-input" placeholder="Введите ваше ФИО" required>
+        
+                    <label for="peopleCount">Количество человек:</label>
+                    <input type="number" id="peopleCount" class="modal-input" placeholder="Введите количество человек" min="1" required>
+        
+                    <label for="contacts">Контакты:</label>
+                    <input type="text" id="contacts" class="modal-input" placeholder="Введите номер телефона" required>
+        
+                    <label for="promoCode">Промокод (при наличии):</label>
+                    <input type="text" id="promoCode" class="modal-input" placeholder="Введите промокод">
+        
+                    <button type="submit" class="submit-button">Отправить</button>
+                </form>
+            </div>
         </div>
+        
 
         <script src="https://res.smartwidgets.ru/app.js" defer></script>
         <div class="sw-app" data-app="a4ec4e70b0218817b7944ce44a644f91"></div>

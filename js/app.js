@@ -161,10 +161,71 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+// document.addEventListener("DOMContentLoaded", function () {
+//     const modal = document.getElementById("modal");
+//     const openButton = document.querySelector(".unique-order-button");
+//     const closeButton = document.querySelector(".close-button");
+
+//     // Функция для открытия модального окна
+//     openButton.addEventListener("click", function (event) {
+//         event.preventDefault(); // Отменяем действие по умолчанию
+//         modal.style.display = "block"; // Показываем модальное окно
+//     });
+
+//     // Функция для закрытия модального окна
+//     function closeModal() {
+//         modal.style.display = "none"; // Скрываем модальное окно
+//     }
+
+//     // Закрытие модального окна при клике на кнопку закрытия
+//     closeButton.addEventListener("click", closeModal);
+
+//     // Закрытие модального окна при клике вне его содержимого
+//     window.addEventListener("click", function (event) {
+//         if (event.target === modal) {
+//             closeModal();
+//         }
+//     });
+
+//     // Закрытие модального окна при нажатии клавиши Esc
+//     window.addEventListener("keydown", function (event) {
+//         if (event.key === "Escape") {
+//             closeModal();
+//         }
+//     });
+// });
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const modal = document.getElementById("modal");
     const openButton = document.querySelector(".unique-order-button");
     const closeButton = document.querySelector(".close-button");
+    const orderForm = document.getElementById("orderForm");
+    const contactsInput = document.getElementById("contacts");
+
+    // Устанавливаем начальное значение +7 и запрещаем его удаление
+    contactsInput.value = "+7 ";
+
+    contactsInput.addEventListener("input", function (e) {
+        let value = contactsInput.value;
+
+        // Не допускаем удаления +7
+        if (!value.startsWith("+7 ")) {
+            contactsInput.value = "+7 ";
+            return;
+        }
+
+        // Удаляем все, кроме цифр
+        let cleaned = value.replace(/[^\d]/g, "").substring(1);
+
+        // Форматируем номер: XXX-XXX-XX-XX
+        if (cleaned.length > 3) cleaned = cleaned.slice(0, 3) + "-" + cleaned.slice(3);
+        if (cleaned.length > 7) cleaned = cleaned.slice(0, 7) + "-" + cleaned.slice(7);
+        if (cleaned.length > 10) cleaned = cleaned.slice(0, 10) + "-" + cleaned.slice(10, 12);
+
+        // Устанавливаем итоговое значение
+        contactsInput.value = "+7 " + cleaned;
+    });
 
     // Функция для открытия модального окна
     openButton.addEventListener("click", function (event) {
@@ -193,7 +254,45 @@ document.addEventListener("DOMContentLoaded", function () {
             closeModal();
         }
     });
+
+    // Обработка отправки формы
+    orderForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Предотвращаем перезагрузку страницы при отправке формы
+
+        const name = document.getElementById("name").value;
+        const peopleCount = document.getElementById("peopleCount").value; // Получаем значение количества человек
+        const contacts = contactsInput.value;
+        const promoCode = document.getElementById("promoCode").value; // Получаем значение промокода
+
+        if (!name || !peopleCount || !contacts) {
+            alert("Пожалуйста, заполните все обязательные поля.");
+            return;
+        }
+
+        const botToken = '7259857266:AAFUQ2C7Gl6iLRYFb8JL-f4kUhu4kq9wxNY';
+        const chatId = '768193489';
+        const message = `Новый заказ:\nФИО: ${name}\nКоличество человек: ${peopleCount}\nКонтакты: ${contacts}${promoCode ? `\nПромокод: ${promoCode}` : ""}`;
+
+        fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`)
+            .then(response => {
+                if (response.ok) {
+                    alert("Заказ успешно отправлен!");
+                    orderForm.reset();
+                    contactsInput.value = "+7 "; // Возвращаем +7 после отправки
+                    closeModal(); // Закрытие модального окна после отправки
+                } else {
+                    alert("Ошибка при отправке заказа.");
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+                alert("Ошибка при отправке заказа.");
+            });
+    });
 });
+
+
+
 
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

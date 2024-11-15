@@ -290,144 +290,223 @@
     /* Более светлый оттенок серого при наведении */
 }
 
-
-
+/* Фон для модального окна */
 .modal {
-    display: none;
-    /* Скрыто по умолчанию */
+    display: none; /* Скрыто по умолчанию */
     position: fixed;
-    z-index: 1001;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    background-color: rgba(88, 88, 88, 0.8);
-    /* Полупрозрачный черный фон */
+    background-color: rgba(0, 0, 0, 0.7); /* Темно-серый полупрозрачный фон */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Содержимое модального окна */
 .modal-content {
-    position: absolute;
-    /* Изменено с relative на absolute */
-    top: 40%;
-    /* Позиционируем на 50% от верха */
-    left: 50%;
-    /* Позиционируем на 50% от левого края */
-    transform: translate(-50%, -50%);
-    /* Сдвигаем обратно на 50% от ширины и высоты */
+    background-color: #333;
     padding: 2em;
-    background-color: #2f2f2f;
-    /* Темно-серый фон */
-    color: #f5f5f5;
-    /* Белый цвет текста */
-    max-width: 100%;
-    /* Максимальная ширина модального окна */
-    text-align: center;
+    width: 90%;
+    max-width: 500px; /* Максимальная ширина окна */
     border-radius: 8px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    width: 20em;
-    height: 26em;
-    padding-top: 4em;
-
-    // Медиа-запрос для экранов 300px и меньше
-    @media (max-width: 300px) {
-        width: 16em; // Ширина чуть больше
-        height: 31em;
-        padding-top: 4em;
-    }
-
-    // Медиа-запрос для планшетов
-    @media (min-width: 678px) {
-        width: 70%; // Увеличенная ширина для планшетов
-        height: 15em;
-        padding-top: 3em;
-    }
-
-    // Медиа-запрос для ноутбуков и ПК
-    @media (min-width: 1024px) {
-        width: 70%; // Увеличенная ширина для ноутбуков и ПК
-        height: 15em;
-        padding-top: 3em;
-    }
+    position: absolute; /* Сделаем модальное окно позиционированным */
+    top: 50%; /* Сдвигаем окно вниз на 50% от высоты экрана */
+    left: 50%; /* Сдвигаем окно вправо на 50% от ширины экрана */
+    transform: translate(-50%, -50%); /* Сдвигаем окно назад на 50% от его собственных размеров */
 }
 
-
-.modal-header {
-    font-weight: bold;
-    /* Жирный текст */
-    font-size: 24px;
-    /* Размер заголовка */
-}
-
-.modal-contacts {
-    margin-top: -0.1em;
-    font-size: 18px;
-}
-
-.modal-link {
-    color: #ffffff;
-    /* Ссылки серого цвета */
-    text-decoration: none;
-}
-
+/* Кнопка закрытия (крестик) */
 .close-button {
     position: absolute;
     top: 10px;
-    right: 20px;
-    color: #f5f5f5;
-    font-size: 28px;
+    right: 10px;
+    font-size: 2em;
+    color: #fff;
     cursor: pointer;
-    transition: transform 0.2s ease;
 }
 
-.close-button:hover {
-    transform: scale(1.1);
-    /* Небольшое увеличение при наведении */
+/* Заголовок модального окна */
+.modal-header {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 1em;
 }
 
-.modal-link {
-    color: inherit;
-    font-size: 1.5em;
-    transition: transform 0.3s ease;
-    text-decoration: none;
-    margin-left: 0.2em;
+/* Стили для полей ввода */
+.modal-input {
+    width: 100%;
+    padding: 0.8em;
+    margin: 0.5em 0;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    box-sizing: border-box;
+}
 
-    &:hover,
-    &:active {
-        transform: scale(1.4);
+/* Кнопка отправки */
+.submit-button {
+    padding: 0.8em;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+.submit-button:hover {
+    background-color: #777;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 90%;
     }
 }
 
-.modal-phone {
-    font-size: 1em;
-}
 
-.whatsapp-icon {
-    color: #25D366;
 
-    &:hover,
-    &:active {
-        color: #1EBE54;
-    }
-}
+// .modal {
+//     display: none;
+//     /* Скрыто по умолчанию */
+//     position: fixed;
+//     z-index: 1001;
+//     left: 0;
+//     top: 0;
+//     width: 100%;
+//     height: 100%;
+//     overflow: hidden;
+//     background-color: rgba(88, 88, 88, 0.8);
+//     /* Полупрозрачный черный фон */
+// }
 
-.telegram-icon {
-    color: #0088CC;
+// .modal-content {
+//     position: absolute;
+//     /* Изменено с relative на absolute */
+//     top: 40%;
+//     /* Позиционируем на 50% от верха */
+//     left: 50%;
+//     /* Позиционируем на 50% от левого края */
+//     transform: translate(-50%, -50%);
+//     /* Сдвигаем обратно на 50% от ширины и высоты */
+//     padding: 2em;
+//     background-color: #2f2f2f;
+//     /* Темно-серый фон */
+//     color: #f5f5f5;
+//     /* Белый цвет текста */
+//     max-width: 100%;
+//     /* Максимальная ширина модального окна */
+//     text-align: center;
+//     border-radius: 8px;
+//     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+//     width: 20em;
+//     height: 26em;
+//     padding-top: 4em;
 
-    &:hover,
-    &:active {
-        color: #007AB8;
-    }
-}
+//     // Медиа-запрос для экранов 300px и меньше
+//     @media (max-width: 300px) {
+//         width: 16em; // Ширина чуть больше
+//         height: 31em;
+//         padding-top: 4em;
+//     }
 
-.vk-icon {
-    color: #4680C2;
+//     // Медиа-запрос для планшетов
+//     @media (min-width: 678px) {
+//         width: 70%; // Увеличенная ширина для планшетов
+//         height: 15em;
+//         padding-top: 3em;
+//     }
 
-    &:hover,
-    &:active {
-        color: #3B70A4;
-    }
-}
+//     // Медиа-запрос для ноутбуков и ПК
+//     @media (min-width: 1024px) {
+//         width: 70%; // Увеличенная ширина для ноутбуков и ПК
+//         height: 15em;
+//         padding-top: 3em;
+//     }
+// }
+
+
+// .modal-header {
+//     font-weight: bold;
+//     /* Жирный текст */
+//     font-size: 24px;
+//     /* Размер заголовка */
+// }
+
+// .modal-contacts {
+//     margin-top: -0.1em;
+//     font-size: 18px;
+// }
+
+// .modal-link {
+//     color: #ffffff;
+//     /* Ссылки серого цвета */
+//     text-decoration: none;
+// }
+
+// .close-button {
+//     position: absolute;
+//     top: 10px;
+//     right: 20px;
+//     color: #f5f5f5;
+//     font-size: 28px;
+//     cursor: pointer;
+//     transition: transform 0.2s ease;
+// }
+
+// .close-button:hover {
+//     transform: scale(1.1);
+//     /* Небольшое увеличение при наведении */
+// }
+
+// .modal-link {
+//     color: inherit;
+//     font-size: 1.5em;
+//     transition: transform 0.3s ease;
+//     text-decoration: none;
+//     margin-left: 0.2em;
+
+//     &:hover,
+//     &:active {
+//         transform: scale(1.4);
+//     }
+// }
+
+// .modal-phone {
+//     font-size: 1em;
+// }
+
+// .whatsapp-icon {
+//     color: #25D366;
+
+//     &:hover,
+//     &:active {
+//         color: #1EBE54;
+//     }
+// }
+
+// .telegram-icon {
+//     color: #0088CC;
+
+//     &:hover,
+//     &:active {
+//         color: #007AB8;
+//     }
+// }
+
+// .vk-icon {
+//     color: #4680C2;
+
+//     &:hover,
+//     &:active {
+//         color: #3B70A4;
+//     }
+// }
 
 
 
