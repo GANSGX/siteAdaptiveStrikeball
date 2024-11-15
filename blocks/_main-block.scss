@@ -575,6 +575,13 @@
     background-size: cover;
     margin-top: 5em;
 }
+@media (max-width: 768px) {
+    .gallery-slider-slide {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+}
 
 .gallery-slider-dots {
     display: flex;
