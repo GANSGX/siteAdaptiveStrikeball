@@ -370,6 +370,33 @@
 }
 
 
+/* Стилизация кнопки */
+.modal__order-btn {
+    border: 1px solid #333; /* Бордер 1px темно-серого цвета */
+    background-color: #333; /* Темно-серый фон */
+    color: white; /* Белый цвет текста */
+    padding: 1em 1em; /* Очень маленькие отступы для уменьшения высоты */
+    font-size: 14px; /* Меньший размер шрифта */
+    border-radius: 3px; /* Скругление углов */
+    display: inline-block; /* Убирает лишние свойства кнопки */
+    text-align: center; /* Центрирует текст */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s, border-color 0.3s; /* Плавный переход */
+}
+
+/* Эффект при наведении */
+.modal__order-btn:hover {
+    background-color: #444; /* Меняем фон на немного светлее при наведении */
+    border-color: #555; /* Меняем бордер на более светлый при наведении */
+}
+
+/* Эффект при фокусе */
+.modal__order-btn:focus {
+    outline: none; /* Убираем стандартную обводку при фокусе */
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1); /* Добавляем эффект фокуса */
+}
+
+
 
 // .modal {
 //     display: none;

@@ -166,3 +166,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+
+
+
+document.getElementById('orderButton').addEventListener('click', function(event) {
+    event.preventDefault(); // Отменяем переход по ссылке
+    
+    // Сохраняем информацию о том, что нужно открыть модальное окно
+    localStorage.setItem('openModal', 'true');
+    
+    // Переходим на главную страницу
+    window.location.href = 'index.html';
+});

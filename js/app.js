@@ -203,6 +203,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const orderForm = document.getElementById("orderForm");
     const contactsInput = document.getElementById("contacts");
 
+    // Проверка, нужно ли открыть модальное окно
+    if (localStorage.getItem('openModal') === 'true') {
+        modal.style.display = "block"; // Показываем модальное окно
+        localStorage.removeItem('openModal'); // Убираем флаг, чтобы окно не открывалось при перезагрузке
+    }
+
     // Устанавливаем начальное значение +7 и запрещаем его удаление
     contactsInput.value = "+7 ";
 
@@ -270,29 +276,32 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const botToken = '7259857266:AAFUQ2C7Gl6iLRYFb8JL-f4kUhu4kq9wxNY';
-        const chatId = '768193489';
+        const chatIds = ['768193489', '2069432903']; // Массив chatId
         const message = `Новый заказ:\nФИО: ${name}\nКоличество человек: ${peopleCount}\nКонтакты: ${contacts}${promoCode ? `\nПромокод: ${promoCode}` : ""}`;
 
-        fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`)
-            .then(response => {
-                if (response.ok) {
-                    alert("Заказ успешно отправлен!");
-                    orderForm.reset();
-                    contactsInput.value = "+7 "; // Возвращаем +7 после отправки
-                    closeModal(); // Закрытие модального окна после отправки
-                } else {
+        // Отправляем запрос для каждого chatId
+        chatIds.forEach(chatId => {
+            fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`)
+                .then(response => {
+                    if (response.ok) {
+                        console.log(`Сообщение отправлено в чат ${chatId}`);
+                    } else {
+                        console.error(`Ошибка при отправке в чат ${chatId}`);
+                    }
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
                     alert("Ошибка при отправке заказа.");
-                }
-            })
-            .catch(error => {
-                console.error('Ошибка:', error);
-                alert("Ошибка при отправке заказа.");
-            });
+                });
+        });
+
+        // Уведомление о успешной отправке
+        alert("Заказ успешно отправлен!");
+        orderForm.reset();
+        contactsInput.value = "+7 "; // Возвращаем +7 после отправки
+        closeModal(); // Закрытие модального окна после отправки
     });
 });
-
-
-
 
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
