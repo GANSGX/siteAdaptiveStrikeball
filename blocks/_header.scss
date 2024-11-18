@@ -3,6 +3,7 @@
     width: 100%;
     background-color: rgba(85, 85, 85, 0.7); // Полупрозрачный цвет фона
     z-index: 1000;
+    top: 0;
 
     &__container {
         display: flex;
