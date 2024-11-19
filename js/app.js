@@ -276,7 +276,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const botToken = '7259857266:AAFUQ2C7Gl6iLRYFb8JL-f4kUhu4kq9wxNY';
-        const chatIds = ['768193489', '1910951263']; // Массив chatId
+        const chatIds = ['768193489', '1910951263', '1434461430']; // Массив chatId
         const message = `Новый заказ:\nФИО: ${name}\nКоличество человек: ${peopleCount}\nКонтакты: ${contacts}${promoCode ? `\nПромокод: ${promoCode}` : ""}`;
 
         // Отправляем запрос для каждого chatId
