@@ -1070,7 +1070,7 @@
 .rules-photo {
     width: 20vw;
     /* Задаем ширину 20% от ширины экрана */
-    height: 70vh;
+    height: 60vh;
     /* Задаем высоту 20% от высоты экрана */
     overflow: hidden;
     /* Чтобы изображение не выходило за пределы */
@@ -1476,5 +1476,23 @@
 //     z-index: 1;
 // }
 
+.shema_proezda {
+    display: flex;
+    flex-direction: column;
 
+    p {
+        margin-top: 0.5em;
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    }
+
+    .last-par {
+        margin-bottom: 1em;
+        
+    }
+
+    .img-proezd {
+        border-radius: 2em;
+        margin-bottom: 0.2em;
+    }
+}
 

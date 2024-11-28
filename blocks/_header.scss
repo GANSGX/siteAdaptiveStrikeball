@@ -9,14 +9,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 1em; // 16px
-        height: 3.75em; // 60px
+        padding: 0 1.5em; // 16px
+        height: 4em; // 60px
     }
 
     // Лого
     &__logo {
         img {
-            max-height: 6em; // 40px
+            max-height: 8em; // 40px
             margin-left: 1.5em;
         }
     }
@@ -221,6 +221,7 @@
                 text-decoration: none;
                 text-align: end; // Центрируем текст
                 display: inline-block; // Делаем блок внутри ссылки для центрирования
+                font-size: 1.3em;
     
                 // Добавим небольшие отступы, чтобы текст смотрелся аккуратно
                 span {

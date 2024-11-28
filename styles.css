@@ -92,11 +92,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1em;
-  height: 3.75em;
+  padding: 0 1.5em;
+  height: 4em;
 }
 .header__logo img {
-  max-height: 6em;
+  max-height: 8em;
   margin-left: 1.5em;
 }
 .header__burger .burger-button {
@@ -259,6 +259,7 @@ body {
     text-decoration: none;
     text-align: end;
     display: inline-block;
+    font-size: 1.3em;
   }
   .header__contact .header__phone span {
     display: block;
@@ -1122,7 +1123,7 @@ body {
 .rules-photo {
   width: 20vw;
   /* Задаем ширину 20% от ширины экрана */
-  height: 70vh;
+  height: 60vh;
   /* Задаем высоту 20% от высоты экрана */
   overflow: hidden;
   /* Чтобы изображение не выходило за пределы */
@@ -1473,6 +1474,22 @@ body {
   color: #b0b0b0; /* Светло-серый цвет текста */
   margin-bottom: 3em; /* Отступ снизу */
   animation: glowingText 2s ease-in-out infinite alternate;
+}
+
+.shema_proezda {
+  display: flex;
+  flex-direction: column;
+}
+.shema_proezda p {
+  margin-top: 0.5em;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+.shema_proezda .last-par {
+  margin-bottom: 1em;
+}
+.shema_proezda .img-proezd {
+  border-radius: 2em;
+  margin-bottom: 0.2em;
 }
 
 /*# sourceMappingURL=styles.css.map */
